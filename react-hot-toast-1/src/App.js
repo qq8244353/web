@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import Sample from './sample'
+import Tooltip from './components/Tooltip'
 import './App.css';
 
 /*
@@ -24,17 +25,39 @@ function App() {
   );
 }
 */
+const Content= () => {
+  return (
+    <div>
+      <h1>Contentコンポーネント</h1>
+    </div>
+  );
+};
 
 function App() {
   const style = {
     width: "50%",
     margin: "0 auto",
-    marginTop: 150,
+    marginTop: 300,
+  };
+  const style2 = {
+    witdh: "500px",
+    margin: "0 auto",
   };
   return (
     <div className="App">
       <div style={style}>
         <Sample />
+      </div>
+      <div>
+        <h1>ReactではじめてのTooltip実装</h1>
+        <div>
+          <Tooltip
+            content={<Content />}
+            location="right"
+          >
+            <button>ToolTip</button>
+          </Tooltip>
+        </div>
       </div>
     </div>
   );
